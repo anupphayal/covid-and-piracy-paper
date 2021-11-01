@@ -1,0 +1,154 @@
+
+
+
+---
+output: 
+  pdf_document:
+    citation_package: natbib
+    keep_tex: true
+    fig_caption: true
+    latex_engine: pdflatex
+    includes:
+       in_header: mytemplate.tex
+
+title: The Unexpected Consequences of a Public Health Emergency
+author: 
+rights:  Creative Commons Attribution 4.0 International
+language: en-US
+tags: Covid-19, maritime piracy
+abstract: |
+  The economic fallout from the COVID-19 pandemic has been devastating. Job losses, negative growth rates, and increased poverty have all followed rising infection rates. The economic costs have been especially challenging for many piracy-prone countries. The IMF anticipates sizable unemployment increases in Brazil, the Philippines, Indonesia, Uruguay an elsewhere. Deeper and more durable economic damage may materialize in some West African countries. Often, negative economic shocks produce surges in crime, both on land and at sea. The present study evaluates the effects of COVID-19 on maritime pirate attacks in two regions: West Africa and the Indo-Pacific. Employing both monthly and quarterly data on infection rates, sea-piracy incidents, and economic conditions, we explore whether COVID-19 and the subsequently economic fallout has produced more maritime crime. We do not find clear evidence of this relationship in the Indo-Pacific, however, COVID-19 does appear to have increased sea-piracy incidents in the Gulf of Guinea.
+
+---
+
+```{r setup, include=FALSE}
+# tinytex::install_tinytex()
+# list.of.packages <- c("tinytex")
+# new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+# if(length(new.packages)) install.packages(new.packages)
+library(tinytex)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+       
+# Introduction
+The World Health Organization (WHO) officially declared COVID-19 a pandemic on March 11, 2020.\footnote{The WHO first recorded cases in late 2019.}  By the middle of August 2021, the world totaled over 207 million officially recorded cases and 4.25 million deaths, although experts believed the true number was much higher on both counts (NYTimes 2021). In response to the pandemic, most countries went into some version of immediate lockdown in March 2020 and instituted rules such as social distancing and later mask-wearing as a way to break the chain of infections and contain the spread. Pandemic mitigation measures lead to a halt in global economic activity as borders closed, consumers stayed home, and demand for most services and industries plummeted. The economic consequences of COVID-19 were felt most strongly in developing countries, especially those largely labor-intensive economies with weak worker protections. The aquaculture sectors in the Indo-Pacific were hard hit.
+  
+  There have been a number of studies on the impact of COVID-19 on crime (on land), but so far, no study has investigated how the pandemic has affected crime on the sea. In this article, we take what is known about how COVID-19 devastated the global economy to investigate how the pandemic affected the level of maritime piracy among littoral states. Our aim is to situate this study on piracy in the larger literature on the relationship between crime and the economy, how they affect each other, whether the relationship is possibly endogenous, and if so, how best to capture it.
+  
+Recent studies on the relationship between COVID-19 and crime demonstrate that the pandemic had a significant decreased effect on illicit activity, although the effect varies by the type of crime. Structural conditions are mainly to blame for less opportunities. But, will this also have the same effect on maritime piracy, that is, crime on the sea? We find strong evidence that the relationship for piracy is different. The pandemic affected structural opportunities, but in the opposite direction as crime on land. Individuals unable to make ends meet in the new lock downed and quarantined formal blue economy and without an adequate safety net to carry them over until it was safe to return to work turned to illicit means to make ends meet. During the pandemic, piracy increased and clustered in the coastal waters of places such as Somalia, Bangladesh, Indonesia, Malaysia, and Nigeria.
+
+In what follows, we investigate the relationship between the COVID-19 pandemic, specifically the number of officially recorded cases, and the level of maritime piracy incidents in the territorial waters of Indo-Pacific littoral states. First, we describe how the pandemic affected the aquaculture economies. Next, we hypothesize how the pandemic might lead to an increased number of piracy incidents. Lastly, we conclude with our findings and provide a discussion. 
+
+
+## The Link Between COVID-19 and Maritime Piracy
+In this section, we argue why an increase in cases might lead to more maritime piracy. The primary mechanism we propose is that the pandemic changed the structural opportunities for piracy when the aquaculture industry crashed. The more stringent policies governments engaged in to mitigate the spread of the virus, the worse the economic impact on the fishing industry. The severe downturn in the fishing industry drove individuals, we hypothesize, to engage in piracy. Unlike crime on land, which mainly decreased around the world, piracy does not have the same opportunity structures.
+
+Many initial studies on the relationship between the COVID-19 pandemic and crime on land find that the pandemic had a decreased effect on it. In a global analysis of stay-at-home restrictions in 27 cities across 23 countries in the Americas, Europe, the Middle East, and Asia, Nivette et al. (2021) find that restrictions led to a decline in urban crime. The average drop in urban crime was -37%. They found the largest drop in robbery and theft. The implication of their study is that the significant declines in urban crime are attributed to large-scale changes in the opportunity structures and constraints faced by potential offenders as opposed to any psychological and social motivations (Nivette et al., 2021). \textcolor{red}{Have more papers in my notes on crime and covid, just need to add them.}
+
+
+## The pandemic and mitigation measures led to a market failure
+
+How did the opportunity for piracy change during the pandemic? The COVID-19 pandemic has been devastating for the blue economy (Bennett et al., 2020; Ferrer et al., 2021; Minahal et al., 2020; Sorensen et al., 2020).\footnote{During the writing of this paper, the world is going through the Delta variant, a more lethal strain of the virus.}  ASEAN countries, for example, saw significant declines in their overall growth, trade volume, as well as increases in unemployment. Indonesia’s GDP growth in the last quarter of 2019 was 4.97%. In the first quarter of 2020 it dropped to 2.97% and turned negative dropping to -5.32% in the second quarter. During the same period, the Philippines saw their GDP decrease from 6.7% in the last quarter of 2019 to -0.7% and dropping a further -16.5% in the second quarter. Similarly for Malaysia, from 3.6% to 0.7%, and -17.1% in the second quarter (Chong et al., 2019: 172-6).
+
+Countries employed various public policies to prevent, stop, contain, and mitigate the spread of the virus (Djalante et al., 2020; Haug et al., 2020). We contend that the more stringent the policies were, the larger the effect on the fishing industry. The pandemic’s mitigation measures have led to a recession that the aquaculture industry has not seen in over sixty years. There have been declines in the Fish Price Index and in the overall supply, production, and consumption of fish. The FAO anticipates that global fish production fell by 1.7% in 2020, which equated to a 1.4% decline in aquaculture output (citation). Decreased demand, especially where production relies on external markets, the lack safety and sanitary measures, and restrictions on movement, sometimes so severe fishermen are stranded for months, hurt the industry by decreasing fisheries production. Trade has been hurt because of border restrictions and closures, delays from health inspections, and slowdowns from individuals quarantining and demanding safer working conditions (FAO, 2021).
+
+Even before the onset of the pandemic, the aquaculture industry in the Indo-Pacific faced many hurdles. It is a labor-intensive and largely poorly regulated sector with few employment protections. Most countries in the region also do not have adequate social safety net protections. The industry itself is always subject to pollution, IUU fishing, and downturns from climate change, for example, from flooding and storms. One study found that in Thailand and Taiwan, workers faced employment disruptions, travel and mobility restrictions, and poor access to health and social services (Marschke et al., 2021).\footnote{In Thailand, for example, in March 2020, between 60,000 to 200,000 migrant workers in the fishing left to go back to their homes in Myanmar, Cambodia, and Laos. When fishing resumed, it was a perfect storm. There were worker shortages from the mostly migratory workforce being out of the country. Restrictions on transportation in Thailand made it difficult to fill in gaps where they were needed. There were restrictions on vessels moving between ports. Border restrictions led to the hiring of illegal workers, and workers faced exploitation (Marschke et al., 2021: 92).}  Similarly in Bangladesh, restrictions on transportation, coupled with less manpower, and production problems are seen by another study as the main culprit. While lower consumer demand reduced the price of fish, increased production, transportation, storage and marketing costs hurt the industry in Bangladesh even more (Islam et al., 2021).
+
+The aquaculture sector in Indonesia, which is dominated by small-scale fishers, was also hit hard. The Indonesian government implemented lockdowns and transportation restrictions by closing port facilities early on during the pandemic. The lockdowns, restrictions on transportation, business closures where fish are sold, and fishers being forced to sell at lower prices all had a major negative effect on in fishing industry in Indonesia. (Ferrer et al., 2021; Mardhia et al., 2020). By April 2020, fish exports in Indonesia fell by 70% (Maulana & Zahro, 2021; Mubarok & Ambari, 2020). In an example of how hard things were, in Southeast Sulawesi, Indonesia, the number of active fishers and traders declined by over 90% because of the pandemic. Interviewing small-scale fishermen and traders in Southeast Sulawesi, Campbell et al. (2021) find that they, “believed that the primary impacts to their fishing practices during the pandemic were a lack of fish traders and a low/reduced fish value” (2021: 6-7).\footnote{Campbell et al. (2021: 6) also find: “97% of men and 83% of women believed that their businesses were impacted or severely impacted by the pandemic. Of the 114 fishers interviewed, approximately 99% of men and 75% of women stated that their fishing practices were impacted or severely impacted”.}
+
+Further, while the fishing sector crashed, opportunities for piracy were also affected by the number and availability of targets on the sea. Interestingly, the evidence from one study is mixed. In a global analysis on the impact of marine traffic during the pandemic between January and June 2020, researchers found a downturn in activity similar to major downturns in economic activity on land; however, they also found there were mixed results by region. The European and Mediterranean seas saw decreases in marine activity while East Asia had a mixture of decreases and increases. Much of the latter is based on traffic in China’s EEZ (March et al., 2021). In the Strait of Malacca, in January, February, and March 2020 there were positive absolute changes in marine traffic, negative changes in April and May (signifying that the pandemic had a negative affect like it did everywhere else), but then a positive change again in June 2020 (March et al., 2021: 8). In 2020, the IMB recorded 23 attacks in the Straits, nearly doubling the number of incidents from 2019 and reaching the highest level of sea-piracy activity recorded by the IMB in the Singapore Straits since data collection began (blog post).
+
+## Market failure led individuals to engage in piracy
+
+The COVID-19 pandemic, by hurting the fishing sector, especially its small-scale fisheries, sharply increased the likelihood that individuals would turn to extralegal means. Maritime piracy is closely related to economic opportunities in the fishing sector (Daxecker & Prins, 2013; Tominaga, 2018). When the market fails, former fishermen fill in the void as pirates. This occurs when restrictions occur, fishing is not available, prices fluctuate, production declines, and illegal fishing activity competes with regulated fishing. Negative economic shocks, for example, lead to an increase in piracy incidents (Flückiger & Ludwig, 2015).
+The COVID-19 pandemic was a major exogenous event that led to stringency measures to combat the virus. Many of these policies exacerbated the labor-intensive characteristics of the aquaculture industry in developing countries where piracy is already located. Small-scale fishermen, for instance, caught in poverty traps, are especially hurt during economic downturns. When the economy fails, the poor are more likely to cling to their job, but are also more likely to walk away as fish catch declines or if they have a higher level of material wealth (Cinner et al., 2009). Tominaga (2018) argues that there are different mechanisms explaining why small-scale artisanal fishermen are more willing to engage in piracy when the marine economy fails as opposed to when fishermen who work in large, industrial/commercial fishing engage in piracy. He argues that small-scale fishermen, which are deeply reliant on the industry for their own food consumption, and have little material ability to engage in large-scale pirate attacks (attacking large vessels and hostage-taking), are more likely to commit small-scale unsophisticated attacks when fish production declines. In contrast, for fishermen working in industrial fishing, declines in fish production and value, alongside their greater capabilities, are more likely to lead to larger, sophisticated pirate attacks.
+
+
+Stringency measures in response to the pandemic have also affected piracy through IUU fishing. In one of the first studies to examine the IUU-piracy nexus globally, Desai and Shambaugh (2021) find that IUU fishing is associated with higher incidences of maritime piracy. They argue that the more IUU fishing occurs, the more opportunities have to supplement their income while also deterring legal fishing from the area.  We agree that fishermen are more likely to engage in illegal fishing under…
+
+
+
+## Empirical Evidence
+
+
+Does poverty substantively affect piracy? Understanding the causal effects of poverty is difficult since the variable is intertwined with so many other variables such as governance, its geographical dispersion, population and other demographic factors. In such scenario, events that spur economic crises and poverty provide an opportunity to examine its impact in an experiment-like scenario. Comparison of immediate pre- and post-crises of a single case helps us understand the effect of crisis-induced poverty on certain outcomes like crime, or, in our case, piracy. In this study, we look at two piracy-prone country cases, Indonesia and Nigeria. 
+
+
+
+## Descriptive Stats
+
+
+
+
+
+
+```{r, figures-side, fig.show="hold", out.width="50%", echo = FALSE, message=FALSE, fig.cap='Some cool caption', fig.cap.align='center',}
+par(mar = c(4, 4, .1, .1))
+knitr::include_graphics("figures/yearly_piracy_1993-2021.pdf")
+knitr::include_graphics("figures/yearly_piracy_loess_1993-2021.pdf")
+```
+\textit{Note: The left panel in the figure shows yearly counts of piracy in Indonesia and Nigeria. The right panel shows the regional trend with IMB data. The figures depict the increase of piracy events in the aftermath of the economic crises.}
+
+
+
+
+
+## Empirics
+
+
+We now examine the effect of covid on piracy using monthly cases of Covid and piracy in the two countries. Rather than just the actual pandemic, we expect government-imposed restrictions to curb the pandemic will have a more severe effect on the local economy and individual poverty level. This pandemic-induced poverty, in turn, should affect monthly piracy incidents. To test our hypotheses, we use interrupted time series analysis, which tracks the trend over time, before and after an intervention, which in our case is the stringent measures from \citet{hale2021global}. We modify the daily stringency measures from the dataset into monthly cumulative measure by aggregating the following government responses each month: school closures, workplace closures, canceled public events, gathering restrictions, public transport closures, stay at home orders, internal movement restrictions, and international travel controls. Each of these responses is coded as 1 if the government declared restriction on that criteria and 0 otherwise. For instance, if a country imposed all eight types of restrictions every day for a month, the cumulative restriction for the month is calculated as 8x30=240. We consider months following the highest level cumulative restriction as the post-intervention period. 
+ 
+ There was a substantive variation on how countries imposed these stringency measures. While many factors may have led the governments to impose restrictions, one key was the reported covid cases in the country. For instance, Nigeria and some other countries in the Gulf of Guinea imposed heavier restrictions early on, whereas countries in Southeast Asia were less affected early on. Indonesia saw the surge in covid cases only in the second wave of the Delta variant. As a result, Nigeria has the intervention in April 2020 while Indonesia has intervention much later, in December 2020. Table 1 shows the results of interrupted time series analysis where the covid-induced stringency in Indonesia and Nigeria is compared against control-case countries Japan and Taiwna in Southeast Asia and Ghana and Liberia in the Gulf of Guinea. 
+
+
+
+\begin{table}[h]
+	\centering
+		\caption*{Table 1 Interrupted time series analysis}	
+	\resizebox{0.9\textwidth}{!}{\begin{minipage}{\textwidth}   % this scales size but also retains caption; scalebox doesnot allow caption
+			\centering
+		
+			\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+					\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+					\begin{tabular}{l*{2}{c}}
+						\hline\hline
+						&\multicolumn{1}{c}{Indonesia}&\multicolumn{1}{c}{Nigeria}\\
+						\hline
+
+							\_t                  &  -0.000   &   0.243   \\
+							&     (.)   & (0.393)   \\
+							\_z                  &   5.033***&   5.277***\\
+							& (1.116)   & (0.528)   \\
+							\_z\_t                &  -0.156   &  -2.207***\\
+							& (0.144)   & (0.473)   \\
+							\_z\_x2020m12         &  -0.611   &           \\
+							& (1.409)   &           \\
+							\_z\_x\_t2020m12 (Main)       &   0.315   &           \\
+							& (0.285)   &           \\
+							\_x2020m4            &           &  -0.752   \\
+							&           & (0.957)   \\
+							\_x\_t2020m4          &           &  -0.253   \\
+							&           & (0.397)   \\
+							\_z\_x2020m4          &           &   2.283*  \\
+							&           & (1.265)   \\
+							\_z\_x\_t2020m4  (Main)      &           &   2.233***\\
+							&           & (0.485)   \\
+							Constant            &   0.000***&   0.429   \\
+							& (0.000)   & (0.375)   \\
+						
+
+							Observation         &      54   &      54   \\
+								\hline
+												\end{tabular}
+ 	\begin{tablenotes}
+	\item Note: The table above shows the effect of covid stringency onpiracy controlling for nearby countries which had far less stringency compared to the country cases around the same time frame.
+\end{tablenotes}
+
+\end{minipage}
+}
+\end{table}
+
+
+
+
