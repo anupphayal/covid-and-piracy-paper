@@ -13,7 +13,13 @@ bibliography: library.bib
 title: "The Unexpected Consequences of a Public Health Emergency Comparing West African and Indo-Pacific Maritime Crime during the COVID-19 Pandemic"
 author: 
 abstract: 
-  The economic fallout from the COVID-19 pandemic has been devastating. Job losses, negative growth rates, and increased poverty have all followed rising infection rates. The economic costs have been especially challenging for many piracy-prone countries. The IMF anticipates sizable unemployment increases in Brazil, the Philippines, Indonesia, Uruguay an elsewhere. Deeper and more durable economic damage may materialize in some West African countries. Often, negative economic shocks produce surges in crime, both on land and at sea. The present study evaluates the effects of COVID-19 on maritime pirate attacks in two regions, West Africa and the Indo-Pacific. Employing both monthly and quarterly data on infection rates, sea-piracy incidents, and economic conditions, we explore whether COVID-19 and the subsequently economic fallout has produced more maritime crime. We do not find clear evidence of this relationship in the Indo-Pacific, however, COVID-19 does appear to have increased sea-piracy incidents in the Gulf of Guinea.
+  \singlespacing The economic fallout from the COVID-19 pandemic has been devastating. Job losses, negative growth rates, and increased poverty have all followed rising infection rates. The economic costs have been especially challenging for many piracy-prone countries. The IMF anticipates sizable unemployment increases in Brazil, the Philippines, Indonesia, Uruguay an elsewhere. Deeper and more durable economic damage may materialize in some West African countries. Often, negative economic shocks produce surges in crime, both on land and at sea. The present study evaluates the effects of COVID-19 on maritime pirate attacks in two regions, West Africa and the Indo-Pacific. Employing both monthly and quarterly data on infection rates, sea-piracy incidents, and economic conditions, we explore whether COVID-19 and the subsequently economic fallout has produced more maritime crime. We do not find clear evidence of this relationship in the Indo-Pacific, however, COVID-19 does appear to have increased sea-piracy incidents in the Gulf of Guinea.
+
+header-includes:
+  - \usepackage{longtable}
+  - \LTcapwidth=.95\textwidth
+  - \linespread{1.5}
+  - \usepackage{hyperref}
 
 ---
 
@@ -67,61 +73,70 @@ The COVID-19 pandemic was a major exogenous event that led to stringency measure
 Stringency measures in response to the pandemic have also affected piracy through IUU fishing. In one of the first studies to examine the IUU-piracy nexus globally, Desai and Shambaugh (2021) find that IUU fishing is associated with higher incidences of maritime piracy. They argue that the more IUU fishing occurs, the more opportunities have to supplement their income while also deterring legal fishing from the area.  We agree that fishermen are more likely to engage in illegal fishing under…
 
 
-[AP]  According to an Indonesian study, coastal areas in the country have suffered significantly due to the pandemic \citep{teniwut2021covid}. Towards the beginning of 2020, although Indonesia's number of Covid cases was relatively low, the impact on the local economy was palpable due to the decrease in overseas demand for local aquaculture and farming products and limited shipping access.  According to the author, even the ``perception of declining fishery conditions’’ was found to aggravate social problems like inter-village conflicts (p. 186). But the number of Covid cases in the country started to increase steadily around November 2020 and the government response peaked in December of that year. 
-
-
-
-## Empirical Evidence
-
-
-
-One identification strategy to examine the effects of economic hardshipson piracy events is to compare the the number of events before and after a country implements a harsh stringency measure. 
-
-
-
-Does poverty substantively affect piracy? Understanding the causal effects of poverty is difficult since the variable is intertwined with so many other variables such as governance, its geographical dispersion, population and other demographic factors. In such scenario, events that spur economic crises and poverty provide an opportunity to examine its impact in an experiment-like scenario. Comparison of immediate pre- and post-crises of a single case helps us understand the effect of crisis-induced poverty on certain outcomes like crime, or, in our case, piracy. For identification, the immediate pre- or post- effect is preferable than data spanning longer time frame since the effect of other factors tend to dilute the result as we increase the time span. 
-
-
-In this study, we look at two piracy-prone country cases, Indonesia and Nigeria. The two countries are the two highest piracy prone countries but in different regions of the world. 
-
-
 
 ## Descriptive Stats
+One identification strategy to examine the effects of economic hardships on piracy events is to compare the the number of events before and after a country implements a harsh stringency measure. In this study, we look at two piracy-prone country cases, Indonesia and Nigeria. The two countries are the two highest piracy prone countries but in different regions of the world. Figure \ref{fig:pcount} shows the piracy events in the two countries and regions since 1993.
 
-
-
-```{r, figures-side, fig.show="hold", out.width="48%", echo = FALSE, message=FALSE, fig.cap='Count of piracy events', fig.cap.align='center',}
-par(mar = c(4, 4, .1, .1))
-knitr::include_graphics("figures/yearly_piracy_1993-2021.pdf")
-knitr::include_graphics("figures/yearly_piracy_loess_1993-2021.pdf")
+```{=latex}
+\begin{figure}[h]
 ```
+
+```{r pcount,  fig.show="hold", out.width="48%", echo=FALSE, fig.cap.align='center'}
+par(mar = c(4, 4, .1, .1))
+
+knitr::include_graphics(here::here("figures/yearly_piracy_1993-2021.pdf"))
+knitr::include_graphics(here::here("figures/yearly_piracy_loess_1993-2021.pdf"))
+```
+```{=latex}
+\caption{Count of piracy events. \label{fig:pcount}}
 \textit{Note: The left panel in the figure shows yearly counts of piracy in Indonesia and Nigeria. The right panel shows the regional trend with IMB data. The figures depict the increase of piracy events in the aftermath of the economic crises.}
+\end{figure}
+```
 
 
 
 
 ### Government Stringency measures as proxy for economic disruption
 
-COVID-19 cases around the world began to decrease after the introduction of vaccines, but at a varying rate across the world. Even at the height of pandemic, the severity of the pandemic was not uniform across the world . As a consequence, thge government response in restrcting movement and businesses was not uniform across countries around the world. This seemingly random event opened up an opportunity for researchers to examine the effect of economic disruption. For instance, Neville et al. (2020) -----
+COVID-19 cases around the world began to decrease after the introduction of vaccines, but at a varying rate across the world. Even at the height of pandemic, the severity of the pandemic was not uniform across the world . As a consequence, thge government response in restrcting movement and businesses was not uniform across countries around the world. This seemingly random event opened up an opportunity for researchers to examine the effect of economic disruption. 
+
+<!-- For instance, Neville et al. (2020) -->
 
 We now examine the effect of covid on piracy using monthly cases of Covid and piracy in the two countries, Indonesia and Nigeria where COVID-19 cases peaked at different periods. Rather than just the actual pandemic, we expect government-imposed restrictions to curb the pandemic will have a more severe effect on the local economy and individual poverty level. This pandemic-induced poverty, in turn, should affect monthly piracy incidents. To test our hypotheses, we use interrupted time series analysis, which tracks the trend over time, before and after an intervention, which in our case is the stringent measures from \citet{hale2021global}. We modify the daily stringency measures from the dataset into monthly cumulative measure by aggregating the following government responses each month: school closures, workplace closures, canceled public events, gathering restrictions, public transport closures, stay at home orders, internal movement restrictions, and international travel controls. Each of these responses is coded as 1 if the government declared restriction on that criteria and 0 otherwise. For instance, if a country imposed all eight types of restrictions every day for a month, the cumulative restriction for the month is calculated as 8x30=240. We consider months following the highest level cumulative restriction as the post-intervention period. 
  
- There was a substantive variation on how countries imposed these stringency measures. While many factors may have led the governments to impose restrictions, the main driving factor was the reported Covid cases in the country. The figure below shows the 30-day cumulative stringency measures based on the 8 factors. As shown in the figure, Nigeria and some other countries in the Gulf of Guinea imposed heavier restrictions early on, whereas countries in Southeast Asia were less affected early on. Indonesia saw the surge in covid cases only in the second wave of the Delta variant. As a result, Nigeria has the intervention in April 2020 while Indonesia has intervention much later, in December 2020. 
+ 
 
 
 
 
-```{r, figures-side-2, fig.show="hold", out.width="50%", echo = FALSE, message=FALSE, fig.cap='Stringency measures', fig.cap.align='center', fig.align="center"}
-
-knitr::include_graphics("figures/cumulative_restriction_indo_nigeria.pdf")
+```{=latex}
+\begin{figure}[h]
 ```
-<!-- \textit{Note: Figure above shows monthly cumulative restriction in the two countries.} -->
+
+```{r stringency,  fig.show="hold", out.width="60%", echo=FALSE, fig.cap.align='center', fig.align="center"}
+par(mar = c(4, 4, .1, .1))
+
+knitr::include_graphics(here::here("figures/cumulative_restriction_indo_nigeria.pdf"))
+
+```
+```{=latex}
+\caption{Stringency measures in response to COVID-19 \label{fig:stringency}}
+\textit{Note: Figure above shows monthly cumulative restrictions imposed by the government in Indonesia and Nigeria, in response to rising COVID-19 cases. As shown in the figure the restrictions peaked in Nigeria in April 2020, and in Indonesia in December 2020.}
+\end{figure}
+```
 
 
-## Empirics
+As shown in \ref{fig:stringency}, there was a substantive variation on how countries imposed these stringency measures. While many factors may have led the governments to impose restrictions, the main driving factor was the reported Covid cases in the country. The figure shows the 30-day cumulative stringency measures based on the eight factors discussed above. As shown in the figure, Nigeria, and some other countries in the Gulf of Guinea (not shown), imposed heavier restrictions early on, whereas countries in Southeast Asia were less affected early on. Indonesia saw the surge in covid cases only during the second wave of the Delta variant. As a result, Nigeria has the intervention in April 2020 while Indonesia has intervention much later, in December 2020. As discussed earlier, these restrictions had significant effect on the local economy. For instance, a study in Indonesia shows that the coastal areas in the country suffered significantly due to the pandemic \citep{teniwut2021covid}. Towards the beginning of 2020, although Indonesia's number of Covid cases was relatively low, the impact on the local economy was palpable due to the decrease in overseas demand for local aquaculture and farming products and limited shipping access.  According to the author, even the ``perception of declining fishery conditions’’ was found to aggravate social problems like inter-village conflicts (p. 186). But as the number of Covid cases in the country started to increase steadily around November 2020 and the government response peaked in December of that year, bringing the local economy to grinding halt.
 
 
-Table 1 shows the results of interrupted time series analysis where the covid-induced stringency in Indonesia and Nigeria is compared against control-case countries Japan and Taiwna in Southeast Asia and Ghana and Liberia in the Gulf of Guinea. 
+
+## Empirical Evidence
+
+
+How might restriction-induced economic hardship affect the number of piracy events? Understanding the causal effects of poverty at the societal level is difficult since the variable is intertwined with many other factors such as governance, geographical dispersion, population, and other demographic factors. Ideally, randomized control trial would be the gold standard to understand the causality of such interventions in a society \citep{hudson2019methodology}. Sudden economic hardship caused at the local level because of the pandemic and stringency responses provides an alternative context similar to a natural experiment. Comparison of immediate pre- and post-crises of even a single case can reveal the effect of economic disruption at the local level on certain outcomes like crime or, in our case, piracy. For identification, the immediate pre- or post-effect is preferable to data spanning a longer time frame since the effect of other factors tends to dilute the result as we increase the time. We use an interrupted time series (ITS) design, which is considered a strong quasi-experimental design, to identify whether economic grievance impacts piracy events. According to \citet{reichardt2019quasi}, ``the ITS design can be implemented with a single unit or multiple units. Indeed, the design can be implemented with an entire population so that no participant goes without the treatment'' (p. 202)
+
+
+Table 1 shows the results of interrupted time series analysis where the covid-induced stringency in Indonesia and Nigeria is compared against control-case countries Japan and Taiwan in Southeast Asia and Ghana and Liberia in the Gulf of Guinea. 
 
 
 
